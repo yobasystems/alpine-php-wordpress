@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ash
 
 [ -f /run-pre.sh ] && /run-pre.sh
 
