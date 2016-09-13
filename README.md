@@ -1,22 +1,21 @@
-# Alpine PHP-FPM & Wordpress Docker image
+# Wordpress Docker image running on Alpine Linux
 
-[![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-php-wordpress.svg)](https://imagelayers.io/?images=yobasystems/alpine-php-wordpress:latest)
+[![Docker Layers](https://img.shields.io/badge/docker%20layers-10-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Size](https://img.shields.io/badge/docker%20size-8.14%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-php-wordpress.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-php-wordpress.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-php-wordpress.svg)](https://imagelayers.io/?images=yobasystems/alpine-php-wordpress:latest)
-
-[![Latest](https://badge.imagelayers.io/yobasystems/alpine-php-wordpress.svg)](https://imagelayers.io/?images=yobasystems/alpine-php-wordpress:latest 'latest')
-
-[![Image Layers](https://img.shields.io/imagelayers/layers/yobasystems/alpine-php-wordpress/latest.svg)](https://imagelayers.io/?images=yobasystems/alpine-php-wordpress:latest)
+[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.4-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Syncthing Version](https://img.shields.io/badge/syncthing%20version-v0.14.6-green.svg?maxAge=2592000?style=flat-square)](http://nginx.org/en/)
 
 
-[This](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) Docker image is based on the minimal [Alpine Linux](http://alpinelinux.org/) using the  running Wordpress.
+
+This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) ready for running [WordPress](https://www.wordpress.org/). (Requires external database)
 
 ## Features
 
-  * Minimal size: 120Mb uncompressed, and only 16 layers.
+  * Minimal size only 8.14 MB and only 10 layers
+  * Memory usage is minimal on a simple install
   * [PHP](http://pkgs.alpinelinux.org/package/main/x86/php) 5
   * [Nginx](http://pkgs.alpinelinux.org/package/main/x86/nginx) 1.10.1
   * Memory usage is around 55mb on a simple install.
+
 
 ## Creating an instance
 
@@ -108,7 +107,7 @@ if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
 
 ### Upload limit
 
-The upload limit is 256 Megabytes.
+The upload limit is 128 Megabytes.
 
 ### Change php.ini value
 modify files/php-fpm.conf

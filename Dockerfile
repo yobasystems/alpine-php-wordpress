@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.4
 MAINTAINER Dominic Taylor <dominic@yobasystems.co.uk>
 
 ENV TERM="xterm" \
@@ -13,14 +13,12 @@ RUN apk update \
     php5-pdo_mysql php5-mysqli \
     php5-gd php5-iconv php5-mcrypt \
     php5-mysql php5-curl php5-opcache php5-ctype php5-apcu \
-    php5-intl php5-bcmath php5-dom php5-xmlreader mysql-client && apk add -u musl
-
-RUN rm -rf /var/cache/apk/*
+    php5-intl php5-bcmath php5-dom php5-xmlreader mysql-client && apk add -u musl && \
+    rm -rf /var/cache/apk/*
 
 RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/php.ini && \
     sed -i 's/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/sbin\/nologin/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/bin\/bash/g' /etc/passwd && \
-    sed -i 's/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/sbin\/nologin/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/bin\/bash/g' /etc/passwd- && \
-
+    sed -i 's/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/sbin\/nologin/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/bin\/bash/g' /etc/passwd-
 
 ADD files/nginx.conf /etc/nginx/
 ADD files/php-fpm.conf /etc/php5/
