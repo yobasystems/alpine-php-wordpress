@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM yobasystems/alpine-nginx:latest
 MAINTAINER Dominic Taylor <dominic@yobasystems.co.uk>
 
 ENV TERM="xterm" \
@@ -8,7 +8,7 @@ ENV TERM="xterm" \
     MYSQL_DATABASE=""
 
 RUN apk update \
-    && apk add bash less vim nginx ca-certificates curl \
+    && apk add bash less vim ca-certificates curl \
     php5-fpm php5-json php5-zlib php5-xml php5-pdo php5-phar php5-openssl \
     php5-pdo_mysql php5-mysqli \
     php5-gd php5-iconv php5-mcrypt \
@@ -16,9 +16,7 @@ RUN apk update \
     php5-intl php5-bcmath php5-dom php5-xmlreader mysql-client && apk add -u musl && \
     rm -rf /var/cache/apk/*
 
-RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/php.ini && \
-    sed -i 's/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/sbin\/nologin/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/bin\/bash/g' /etc/passwd && \
-    sed -i 's/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/sbin\/nologin/nginx:x:100:101:Linux User,,,:\/var\/www\/localhost\/htdocs:\/bin\/bash/g' /etc/passwd-
+RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/php.ini
 
 ADD files/nginx.conf /etc/nginx/
 ADD files/php-fpm.conf /etc/php5/
