@@ -8,7 +8,7 @@ ENV TERM="xterm" \
     MYSQL_DATABASE=""
 
 RUN apk update \
-    && apk add bash less vim ca-certificates curl \
+    && apk add bash less vim ca-certificates curl git \
     php5-fpm php5-json php5-zlib php5-xml php5-pdo php5-phar php5-openssl \
     php5-pdo_mysql php5-mysqli \
     php5-gd php5-iconv php5-mcrypt \
