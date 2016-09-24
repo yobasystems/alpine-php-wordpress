@@ -21,13 +21,13 @@ This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/
 
     mkdir -p /data/{domain}/html
 
-    docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
+    docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/etc/nginx/html -p 80:80 yobasystems/alpine-php-wordpress
 
     E.G
 
     mkdir -p /data/yobasystems/html
 
-    docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
+    docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/etc/nginx/html -p 80:80 yobasystems/alpine-php-wordpress
 
 Make sure you create the folder on the host before starting the container and obtain the correct permissions.
 
@@ -35,13 +35,13 @@ Make sure you create the folder on the host before starting the container and ob
 
 mkdir -p /data/{domain}/html
 
-docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
+docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/etc/nginx/html -p 80:80 yobasystems/alpine-php-wordpress
 
 E.G
 
 mkdir -p /data/yobasystems/html
 
-docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
+docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/etc/nginx/html -p 80:80 yobasystems/alpine-php-wordpress
 
 ```
 The following user and group id are used, the files should be set to this:
@@ -71,7 +71,7 @@ chown -R 100:101 /data/{domain}/html
 
 ### Volume structure
 
-* `/usr/html`: Webroot
+* `/etc/nginx/html`: Webroot
 
 
 ### WP-CLI
@@ -81,7 +81,7 @@ This image now includes WP-CLI wpcli.org baked in... Its best to `su nginx` befo
 ```
 docker exec -it <container_name> bash
 su nginx
-cd /usr/html
+cd /etc/nginx/html
 wp-cli core download --locale=en_GB
 
 ```
