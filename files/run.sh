@@ -2,20 +2,21 @@
 
 [ -f /run-pre.sh ] && /run-pre.sh
 
-if [ ! -d /etc/nginx/html ] ; then
-  mkdir -p /etc/nginx/html
-  chown -R nginx:www-data /etc/nginx/html
+if [ ! -d /usr/html ] ; then
+  mkdir -p /usr/html
+  chown -R nginx:www-data /usr/html
 else
-  chown -R nginx:www-data /etc/nginx/html
+  chown -R nginx:www-data /usr/html
 fi
 
-chown -R nginx:www-data /etc/nginx/html
+chown -R nginx:www-data /usr/html
 
 # start php-fpm
 mkdir -p /usr/logs/php-fpm
-php-fpm
+php-fpm7
 
 # start nginx
+mkdir -p /usr/logs/nginx
 mkdir -p /tmp/nginx
 chown nginx /tmp/nginx
 nginx
