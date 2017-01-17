@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.5
 MAINTAINER Dominic Taylor <dominic@yobasystems.co.uk>
 
 ENV TERM="xterm" \
@@ -7,8 +7,7 @@ ENV TERM="xterm" \
     DB_USER=""\
     DB_PASS=""
 
-RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    apk update && \
+RUN apk update && \
     apk add bash less vim nginx ca-certificates git \
     php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl \
     php7-pdo_mysql php7-mysqli \
