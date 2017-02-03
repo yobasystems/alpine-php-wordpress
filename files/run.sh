@@ -4,12 +4,12 @@
 
 if [ ! -d /usr/html ] ; then
   mkdir -p /usr/html
-  chown -R nginx:www-data /usr/html
+  chown -R nginx:nginx /usr/html
 else
-  chown -R nginx:www-data /usr/html
+  chown -R nginx:nginx /usr/html
 fi
 
-chown -R nginx:www-data /usr/html
+chown -R nginx:nginx /usr/html
 
 # start php-fpm
 mkdir -p /usr/logs/php-fpm
