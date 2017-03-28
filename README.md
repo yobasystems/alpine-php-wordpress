@@ -15,6 +15,14 @@ This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/
   * [PHP](http://pkgs.alpinelinux.org/package/main/x86/php) 7.0.14
   * [Nginx](http://pkgs.alpinelinux.org/package/main/x86/nginx) 1.10.2
   * Memory usage is around 55mb on a simple install.
+  * Armv7 (armhf) version with ```:armhf``` tag
+
+## Tags
+
+* ```:latest``` latest nginx & alpine
+* ```:master``` master branch usually inline with latest
+* ```:v0.0.0``` version number related to nginx version
+* ```:armhf``` Armv7 based on latest tag but arm architecture
 
 
 ## Creating an instance
