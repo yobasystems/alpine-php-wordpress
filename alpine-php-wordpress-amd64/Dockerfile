@@ -1,5 +1,5 @@
-FROM alpine:3.5
-MAINTAINER Dominic Taylor <dominic@yobasystems.co.uk>
+FROM yobasystems/alpine:amd64
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64"
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
@@ -21,7 +21,6 @@ RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php7/php.ini && \
     sed -i 's/expose_php = On/expose_php = Off/g' /etc/php7/php.ini && \
     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd- && \
-    ln -s /usr/bin/php7 /usr/bin/php && \
     ln -s /sbin/php-fpm7 /sbin/php-fpm
 
 ADD files/nginx.conf /etc/nginx/

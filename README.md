@@ -2,28 +2,44 @@
 
 [![Docker Layers](https://img.shields.io/badge/docker%20layers-8-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Size](https://img.shields.io/badge/docker%20size-48%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-php-wordpress.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-php-wordpress.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 
-[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.5-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Wordpress Version](https://img.shields.io/badge/wordpress%20version-vlatest-green.svg?maxAge=2592000?style=flat-square)](http://wordpress.org/en/)
-
+[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.6.2-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Wordpress Version](https://img.shields.io/badge/wordpress%20version-vlatest-green.svg?maxAge=2592000?style=flat-square)](http://wordpress.org/en/)
 
 
 This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) ready for running [WordPress](https://www.wordpress.org/). (Requires external database)
 
+##### Alpine Version 3.6.2 (Released Jun 17, 2017)
+##### Wordpress Version latest
+##### PHP Version 7
+
+----
+
+## What is Alpine Linux?
+Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
+
+## What is Wordpress?
+WordPress is an online, open source website creation tool written in PHP. But in non-geek speak, it's probably the easiest and most powerful blogging and website content management system (or CMS) in existence today.
+
 ## Features
 
-  * Minimal size only 48 MB and only 8 layers
-  * Memory usage is minimal on a simple install
-  * [PHP](http://pkgs.alpinelinux.org/package/main/x86/php) 7.0.14
-  * [Nginx](http://pkgs.alpinelinux.org/package/main/x86/nginx) 1.10.2
-  * Memory usage is around 55mb on a simple install.
-  * Armv7 (armhf) version with ```:armhf``` tag
+* Minimal size only 48 MB and only 8 layers
+* Memory usage is minimal on a simple install
+* Memory usage is around 55mb on a simple install.
+
+## Architectures
+
+* ```:amd64```, ```:latest``` - 64 bit Intel/AMD (x86_64/amd64)
+* ```:i386```, ```:x86``` - 32 bit Intel/AMD (x86/i686)
+* ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
+* ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
+
+#### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
 ## Tags
 
-* ```:latest``` latest nginx & alpine
+* ```:latest```, ```:amd64``` latest branch based on amd64
 * ```:master``` master branch usually inline with latest
-* ```:v0.0.0``` version number related to nginx version
-* ```:armhf``` Armv7 based on latest tag but arm architecture
-
+* ```:v0.0.0``` version number related to docker version
+* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
 
 ## Creating an instance
 
@@ -240,3 +256,5 @@ mysql:
 * [Yoba Systems](https://www.yobasystems.co.uk/)
 
 * [Dockerhub - yobasystems](https://hub.docker.com/u/yobasystems/)
+
+* [Quay.io - yobasystems](https://quay.io/organization/yobasystems)
