@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/sh
 
 [ -f /run-pre.sh ] && /run-pre.sh
 
@@ -9,7 +9,7 @@ else
   chown -R nginx:nginx /usr/html
 fi
 
-chown -R nginx:nginx /usr/html
+chown -R nginx:www-data /usr/html
 
 # start php-fpm
 mkdir -p /usr/logs/php-fpm
