@@ -1,5 +1,5 @@
 FROM yobasystems/alpine:armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf"
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" date="26-nov-2017"
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
