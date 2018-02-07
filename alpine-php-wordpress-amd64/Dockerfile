@@ -1,5 +1,5 @@
 FROM yobasystems/alpine:amd64
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" date="26-nov-2017"
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" date="7-feb-2018"
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
