@@ -1,5 +1,6 @@
 FROM yobasystems/alpine:armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" date="7-feb-2018"
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" date="06-aug-2018"
+LABEL nginx-version="1.12.2" php-version="7.1.17" wordpress-version="latest"
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
