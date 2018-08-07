@@ -1,6 +1,6 @@
 FROM yobasystems/alpine:3.8-amd64
 LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" date="07-aug-2018"
-LABEL nginx-version="1.12.2" php-version="7.1.17" wordpress-version="latest"
+LABEL nginx-version="1.14.0" php-version="7.2.8" wordpress-version="latest"
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
