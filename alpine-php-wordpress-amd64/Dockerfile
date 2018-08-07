@@ -1,5 +1,5 @@
-FROM yobasystems/alpine:amd64
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" date="06-aug-2018"
+FROM yobasystems/alpine:3.8-amd64
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" date="07-aug-2018"
 LABEL nginx-version="1.12.2" php-version="7.1.17" wordpress-version="latest"
 
 ENV TERM="xterm" \
