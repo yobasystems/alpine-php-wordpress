@@ -1,6 +1,6 @@
-FROM yobasystems/alpine:3.8-armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" date="07-aug-2018"
-LABEL nginx-version="1.14.0" php-version="7.2.8" wordpress-version="latest"
+FROM yobasystems/alpine:3.8.1-armhf
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" alpineversion="3.8.1" build="10-oct-2018"
+LABEL nginx-version="1.14.0" php-version="7.2.10" wordpress-version="latest"
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
@@ -9,7 +9,7 @@ ENV TERM="xterm" \
     DB_PASS=""
 
 RUN apk update && \
-    apk add bash less vim nginx ca-certificates git tzdata \
+    apk add bash less vim nginx ca-certificates git tzdata zip \
     php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl \
     php7-pdo_mysql php7-mysqli php7-session \
     php7-gd php7-iconv php7-mcrypt \
