@@ -1,5 +1,5 @@
-FROM yobasystems/alpine:3.8.1-armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" alpineversion="3.8.1" build="26-nov-2018"
+FROM yobasystems/alpine:3.8.1-aarch64
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM64v8/aarch64" alpineversion="3.8.1" build="26-nov-2018"
 LABEL nginx-version="1.14.0" php-version="7.2.10" wordpress-version="latest"
 
 ENV TERM="xterm" \
