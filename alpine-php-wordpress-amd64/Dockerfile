@@ -1,5 +1,5 @@
 FROM yobasystems/alpine:3.8.1-amd64
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" alpineversion="3.8.1" build="26-nov-2018"
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" alpineversion="3.8.1" build="01-dec-2018"
 LABEL nginx-version="1.14.0" php-version="7.2.10" wordpress-version="latest"
 
 ENV TERM="xterm" \
@@ -8,8 +8,7 @@ ENV TERM="xterm" \
     DB_USER=""\
     DB_PASS=""
 
-RUN apk update && \
-    apk add bash less vim nginx ca-certificates git tzdata zip \
+RUN apk add --no-cache bash curl less vim nginx ca-certificates git tzdata zip \
     libmcrypt-dev zlib-dev gmp-dev \
     freetype-dev libjpeg-turbo-dev libpng-dev \
     php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl \
