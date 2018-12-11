@@ -68,20 +68,9 @@ WordPress is an online, open source website creation tool written in PHP. But in
 
 ## Creating an instance
 
-mkdir -p /data/{domain}/html
-
-docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
-
-E.G
-
-mkdir -p /data/yobasystems/html
-
-docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
-
 Make sure you create the folder on the host before starting the container and obtain the correct permissions.
 
-```bash
-
+```
 mkdir -p /data/{domain}/html
 
 docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
@@ -91,13 +80,13 @@ E.G
 mkdir -p /data/yobasystems/html
 
 docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
-
 ```
+
 The following user and group id are used, the files should be set to this:
 User ID:
 Group ID:
 
-```bash
+```
 chown -R 100:101 /data/{domain}/html
 
 E.G
@@ -109,10 +98,13 @@ Populate /data/{domain}/html with your WP files.
 
 
 The following user and group id are used, the files should be set to this:
+
 User ID:
+
 Group ID:
 
-```bash
+
+```
 chown -R 100:101 /data/{domain}/html
 ```
 
@@ -125,14 +117,15 @@ docker exec -it <container_name> bash
 su nginx
 cd /usr/html
 wp-cli core download --locale=en_GB
-
 ```
 
 ### Redis Cache
 
 Edit the wp-config.php file and include the line;
 
-    define('WP_REDIS_HOST', 'redis');
+```
+define('WP_REDIS_HOST', 'redis');
+```
 
 The next thing is to install the plugin [Redis Object Cache](https://wordpress.org/plugins/redis-cache/)
 
