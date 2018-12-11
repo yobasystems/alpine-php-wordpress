@@ -1,16 +1,20 @@
 # Wordpress Docker image running on Alpine Linux
 
-[![Docker Layers](https://img.shields.io/badge/docker%20layers-8-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Size](https://img.shields.io/badge/docker%20size-48%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-php-wordpress.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-php-wordpress.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
+[![Docker Automated build](https://img.shields.io/docker/automated/yobasystems/alpine-php-wordpress.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-php-wordpress.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
+[![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-php-wordpress.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 
-[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.1-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Wordpress Version](https://img.shields.io/badge/wordpress%20version-vlatest-green.svg?maxAge=2592000?style=flat-square)](http://wordpress.org/en/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.8.1-green.svg?style=for-the-badge)](http://alpinelinux.org/)
+[![Wordpress Version](https://img.shields.io/badge/Wordpress%20version-vlatest-green.svg?style=for-the-badge)](https://www.wordpress.org/en/)
+
 
 
 This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) ready for running [WordPress](https://www.wordpress.org/). (Requires external database)
 
 ##### Alpine Version 3.8.1 (Released September 11, 2018)
 ##### Wordpress Version latest
-##### PHP Version 7.2.10
-##### Nginx Version 1.14.0
+##### PHP Version 7.2.13
+##### Nginx Version 1.14.1
 
 ----
 
@@ -22,14 +26,13 @@ WordPress is an online, open source website creation tool written in PHP. But in
 
 ## Features
 
-* Minimal size only 48 MB and only 8 layers
+* Minimal size only, minimal layers
 * Memory usage is minimal on a simple install
-* Memory usage is around 55mb on a simple install.
+
 
 ## Architectures
 
 * ```:amd64```, ```:latest``` - 64 bit Intel/AMD (x86_64/amd64)
-* ```:i386```, ```:x86``` - 32 bit Intel/AMD (x86/i686)
 * ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
 * ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
 
@@ -37,22 +40,43 @@ WordPress is an online, open source website creation tool written in PHP. But in
 
 ## Tags
 
-* ```:latest```, ```:amd64``` latest branch based on amd64
+* ```:latest``` latest branch
 * ```:master``` master branch usually inline with latest
-* ```:v0.0.0``` version number related to docker version
-* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
+* ```:amd64``` Amd64 based on latest tag but amd64 architecture
+* ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
+* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm32 architecture
+
+## Layers & Sizes
+
+![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-php-wordpress/amd64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-php-wordpress/amd64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-php-wordpress/aarch64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-php-wordpress/aarch64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-php-wordpress/armhf.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-php-wordpress/armhf.svg?style=for-the-badge)
+
+
+## Volume structure
+
+* `/usr/html`: Webroot
+
 
 ## Creating an instance
 
-    mkdir -p /data/{domain}/html
+mkdir -p /data/{domain}/html
 
-    docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
+docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
 
-    E.G
+E.G
 
-    mkdir -p /data/yobasystems/html
+mkdir -p /data/yobasystems/html
 
-    docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
+docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
 
 Make sure you create the folder on the host before starting the container and obtain the correct permissions.
 
@@ -91,13 +115,6 @@ Group ID:
 ```bash
 chown -R 100:101 /data/{domain}/html
 ```
-
-
-
-### Volume structure
-
-* `/usr/html`: Webroot
-
 
 ### WP-CLI
 
