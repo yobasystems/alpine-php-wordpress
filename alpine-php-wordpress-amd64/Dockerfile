@@ -1,6 +1,6 @@
-FROM yobasystems/alpine:3.8.1-amd64
+FROM yobasystems/alpine:3.9.0-amd64
 LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64"
-LABEL nginx-version="1.14.1" php-version="7.2.13" wordpress-version="latest" alpineversion="3.8.1" build="11-dec-2018"
+LABEL nginx-version="1.14.2" php-version="7.2.14" wordpress-version="latest" alpineversion="3.9.0" build="11-Feb-2019"
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
