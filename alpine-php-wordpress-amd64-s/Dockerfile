@@ -1,6 +1,24 @@
-FROM yobasystems/alpine:3.9.0-amd64
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64"
-LABEL nginx-version="1.15.7" php-version="7.2.14" wordpress-version="latest" alpineversion="3.9.0" build="11-Feb-2019"
+FROM yobasystems/alpine:3.9.2-amd64
+
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
+    architecture="amd64/x86_64" \
+    alpine-version="3.9.2" \
+    nginx-version="1.15.9" \
+    php-version="7.2.14" \
+    wordpress-version="latest" \
+    build="24-Mar-2019" \
+    org.opencontainers.image.title="alpine-php-wordpress" \
+    org.opencontainers.image.description="Wordpress image running on Alpine Linux" \
+    org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
+    org.opencontainers.image.vendor="Yoba Systems" \
+    org.opencontainers.image.version="v3.9.2-s" \
+    org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-php-wordpress/" \
+    org.opencontainers.image.source="https://github.com/yobasystems/alpine-php-wordpress" \
+    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.created=$BUILD_DATE
 
 ENV TERM="xterm" \
     DB_HOST="172.17.0.1" \
@@ -20,9 +38,9 @@ RUN \
     php7-intl php7-bcmath php7-dom php7-mbstring php7-xmlreader mysql-client curl" && \
     apk --update add ${build_pkgs} ${runtime_pkgs} && apk add -u musl && \
     cd /tmp && \
-    wget http://nginx.org/download/nginx-1.15.7.tar.gz && \
-    tar xzf nginx-1.15.7.tar.gz && \
-    cd /tmp/nginx-1.15.7 && \
+    wget http://nginx.org/download/nginx-1.15.9.tar.gz && \
+    tar xzf nginx-1.15.9.tar.gz && \
+    cd /tmp/nginx-1.15.9 && \
     ./configure \
       --prefix=/etc/nginx \
       --sbin-path=/usr/sbin/nginx \
@@ -77,9 +95,8 @@ RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php7/php.ini && \
 ADD files/nginx.conf /etc/nginx/nginx.conf
 ADD files/php-fpm.conf /etc/php7/
 ADD files/run.sh /
-RUN chmod +x /run.sh
-
-RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp-cli && chown nginx:nginx /usr/bin/wp-cli
+RUN chmod +x /run.sh && \
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp-cli && chown nginx:nginx /usr/bin/wp-cli
 
 EXPOSE 80
 VOLUME ["/usr"]
