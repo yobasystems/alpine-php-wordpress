@@ -4,6 +4,9 @@ stages:
   - manifest
   - deploy
 
+include:
+  - remote: 'https://gitlab.com/yobasystems/gitlab-ci-templates/raw/master/container_scanning_all_arch.yml'
+
 amd64 wordpress build:
   image: yobasystems/alpine-docker:dind
   stage: build
@@ -129,23 +132,3 @@ dockerhub manifest creation:
     - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:latest $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7 --os linux --arch arm
     - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:latest $DOCKER_REGISTRY_DOCKERHUB_REPO:arm64v8 --os linux --arch arm64
     - docker manifest push $DOCKER_REGISTRY_DOCKERHUB_REPO:latest
-
-Github Mirror:
-  stage: deploy
-  tags:
-    - deploy
-  script:
-    - git push --mirror https://$GITHUB_USERNAME:$GITHUB_PASSWORD@$GITHUB_REPO
-    - git push https://$GITHUB_USERNAME:$GITHUB_PASSWORD@$GITHUB_REPO HEAD:master
-
-Bitbucket Mirror:
-  stage: deploy
-  tags:
-    - deploy
-  script:
-    - mkdir -p ~/.ssh
-    - echo "$BB_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
-    - ssh-keyscan -H 'bitbucket.org' >> ~/.ssh/known_hosts
-    - git push --mirror git@$BITBUCKET_REPO
-    - git push git@$BITBUCKET_REPO HEAD:master
