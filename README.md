@@ -258,18 +258,18 @@ mysql:
 
 ## Source Repositories
 
-* [Github - yobasystems/alpine](https://github.com/yobasystems/alpine-php-wordpress)
+* [Github - yobasystems/alpine-php-wordpress](https://github.com/yobasystems/alpine-php-wordpress)
 
-* [Gitlab - yobasystems/alpine](https://gitlab.com/yobasystems/alpine-php-wordpress)
+* [Gitlab - yobasystems/alpine-php-wordpress](https://gitlab.com/yobasystems/alpine-php-wordpress)
 
-* [Bitbucket - yobasystems/alpine](https://bitbucket.org/yobasystems/alpine-php-wordpress)
+* [Bitbucket - yobasystems/alpine-php-wordpress](https://bitbucket.org/yobasystems/alpine-php-wordpress)
 
 
 ## Container Registries
 
-* [Dockerhub - yobasystems/alpine](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
+* [Dockerhub - yobasystems/alpine-php-wordpress](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 
-* [Quay.io - yobasystems/alpine](https://quay.io/repository/yobasystems/alpine-php-wordpress)
+* [Quay.io - yobasystems/alpine-php-wordpress](https://quay.io/repository/yobasystems/alpine-php-wordpress)
 
 
 ## Links
