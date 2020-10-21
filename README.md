@@ -13,7 +13,7 @@ This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/
 
 ##### Alpine Version 3.12.0 (Released April 23, 2020)
 ##### Wordpress Version latest
-##### PHP Version 7.3.20
+##### PHP Version 7.3.23
 ##### Nginx Version 1.18.0
 
 ----
