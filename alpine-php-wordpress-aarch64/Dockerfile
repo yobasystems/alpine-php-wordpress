@@ -1,20 +1,20 @@
-FROM yobasystems/alpine:3.13.5-aarch64
+FROM yobasystems/alpine:3.14.0-aarch64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     architecture="arm64v8/aarch64" \
-    alpine-version="3.13.5" \
-    nginx-version="1.18.0" \
-    php-version="7.4.15" \
+    alpine-version="3.14.0" \
+    nginx-version="1.20.1" \
+    php-version="7.4.21" \
     wordpress-version="latest" \
-    build="19-Apr-2021" \
+    build="07-Jul-2021" \
     org.opencontainers.image.title="alpine-php-wordpress" \
     org.opencontainers.image.description="Wordpress image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.13.5" \
+    org.opencontainers.image.version="v3.14.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-php-wordpress/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-php-wordpress" \
     org.opencontainers.image.revision=$VCS_REF \
