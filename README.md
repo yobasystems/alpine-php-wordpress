@@ -11,7 +11,7 @@
 
 This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) ready for running [WordPress](https://www.wordpress.org/). (Requires external database)
 
-##### Alpine Version 3.16.1 (Released 2021-06-15)
+### Alpine Version 3.16.1 (Released 2022-07-18)
 ##### Wordpress Version latest
 ##### PHP Version 8.0.22
 ##### Nginx Version 1.22.0
@@ -187,7 +187,6 @@ php8-fpm
 php8-intl
 php8-openssl
 php8-session
-php8-mcrypt
 php8-pdo_mysql
 php8-embed
 php8-xmlrpc
