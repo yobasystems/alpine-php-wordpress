@@ -18,34 +18,49 @@ This Docker image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/
 
 ----
 
-## What is Alpine Linux?
+
+## Table of Contents
+
+- [What is Alpine Linux?](#what-is-alpine-linux)
+- [Features](#features)
+- [Architectures](#architectures)
+- [Tags](#tags)
+- [Layers & Sizes](#layers--sizes)
+- [How to use this image](#how-to-use-this-image)
+- [Image contents & Vulnerability analysis](#image-contents--vulnerability-analysis)
+- [Source Repositories](#source-repositories)
+- [Container Registries](#container-registries)
+- [Links](#links)
+- [Donation](#donation)
+
+
+## 🏔️ What is Alpine Linux?
 Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
 
 ## What is Wordpress?
 WordPress is an online, open source website creation tool written in PHP. But in non-geek speak, it's probably the easiest and most powerful blogging and website content management system (or CMS) in existence today.
 
-## Features
+## ✨ Features
 
 * Minimal size only, minimal layers
-* Memory usage is minimal on a simple install
+* Memory usage is minimal on a simple install.
 
-
-## Architectures
+## 🏗️ Architectures
 
 * ```:amd64```, ```:x86_64``` - 64 bit Intel/AMD (x86_64/amd64)
 * ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
 * ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
 
-##### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
+#### 📝 PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
-## Tags
+## 🏷️ Tags
 
 * ```:latest``` latest branch based (Automatic Architecture Selection)
 * ```:amd64```, ```:x86_64```  amd64 based on latest tag but amd64 architecture
 * ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
 * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm32 architecture
 
-## Layers & Sizes
+## 📏 Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
 ![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-php-wordpress/amd64.svg?style=for-the-badge)
@@ -64,6 +79,8 @@ WordPress is an online, open source website creation tool written in PHP. But in
 
 * `/usr/html`: Webroot
 
+
+## 🚀 How to use this image
 
 ## Creating an instance
 
@@ -162,73 +179,73 @@ docker restart <image_name>
 Example:
 
 ```
-docker exec <image_id> apk add php8-soap
+docker exec <image_id> apk add php81-soap
 docker restart <image_name>
 ```
 
 ```
-php8-common
-php8-pdo_sqlite
-php8-pear
-php8-ftp
-php8-imap
-php8-mysqli
-php8-json
-php8-mbstring
-php8-soap
-php8-litespeed
-php8-sockets
-php8-bcmath
-php8-opcache
-php8-dom
-php8-zlib
-php8-gettext
-php8-fpm
-php8-intl
-php8-openssl
-php8-session
-php8-pdo_mysql
-php8-embed
-php8-xmlrpc
-php8-wddx
-php8-dba
-php8-ldap
-php8-xsl
-php8-exif
-php8-pdo_dblib
-php8-bz2
-php8-pdo
-php8-pspell
-php8-sysvmsg
-php8-gmp
-php8-apache2
-php8-pdo_odbc
-php8-shmop
-php8-ctype
-php8-phpdbg
-php8-enchant
-php8-sysvsem
-php8-sqlite3
-php8-odbc
-php8-pcntl
-php8-calendar
-php8-xmlreader
-php8-snmp
-php8-zip
-php8-posix
-php8-iconv
-php8-curl
-php8-doc
-php8-gd
-php8-xml
-php8-dev
-php8-cgi
-php8-sysvshm
-php8-pgsql
-php8-tidy
-php8-pdo_pgsql
-php8-phar
-php8-mysqlnd
+php81-common
+php81-pdo_sqlite
+php81-pear
+php81-ftp
+php81-imap
+php81-mysqli
+php81-json
+php81-mbstring
+php81-soap
+php81-litespeed
+php81-sockets
+php81-bcmath
+php81-opcache
+php81-dom
+php81-zlib
+php81-gettext
+php81-fpm
+php81-intl
+php81-openssl
+php81-session
+php81-pdo_mysql
+php81-embed
+php81-xmlrpc
+php81-wddx
+php81-dba
+php81-ldap
+php81-xsl
+php81-exif
+php81-pdo_dblib
+php81-bz2
+php81-pdo
+php81-pspell
+php81-sysvmsg
+php81-gmp
+php81-apache2
+php81-pdo_odbc
+php81-shmop
+php81-ctype
+php81-phpdbg
+php81-enchant
+php81-sysvsem
+php81-sqlite3
+php81-odbc
+php81-pcntl
+php81-calendar
+php81-xmlreader
+php81-snmp
+php81-zip
+php81-posix
+php81-iconv
+php81-curl
+php81-doc
+php81-gd
+php81-xml
+php81-dev
+php81-cgi
+php81-sysvshm
+php81-pgsql
+php81-tidy
+php81-pdo_pgsql
+php81-phar
+php81-mysqlnd
 ```
 
 ## Docker Compose example:
@@ -254,7 +271,13 @@ mysql:
   image: yobasystems/alpine-mariadb
 ```
 
-## Source Repositories
+## 🔍 Image contents & Vulnerability analysis
+
+| PACKAGE NAME          | PACKAGE VERSION | VULNERABILITIES |
+|-----------------------|-----------------|-----------------|
+
+
+## 📚 Source Repositories
 
 * [Github - yobasystems/alpine-php-wordpress](https://github.com/yobasystems/alpine-php-wordpress)
 
@@ -263,14 +286,14 @@ mysql:
 * [Bitbucket - yobasystems/alpine-php-wordpress](https://bitbucket.org/yobasystems/alpine-php-wordpress)
 
 
-## Container Registries
+## 🐳 Container Registries
 
 * [Dockerhub - yobasystems/alpine-php-wordpress](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 
 * [Quay.io - yobasystems/alpine-php-wordpress](https://quay.io/repository/yobasystems/alpine-php-wordpress)
 
 
-## Links
+## 🔗 Links
 
 * [Yoba Systems](https://www.yobasystems.co.uk/)
 
@@ -282,7 +305,7 @@ mysql:
 
 * [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
 
-## Donation
+## 💰 Donation
 
 [![BMAC](https://img.shields.io/badge/BUY%20ME%20A%20COFFEE-£5-blue.svg?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/dominictayloruk?new=1)
 
