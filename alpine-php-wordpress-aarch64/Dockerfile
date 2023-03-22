@@ -6,10 +6,10 @@ ARG VCS_REF
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     architecture="arm64v8/aarch64" \
     alpine-version="3.17.2" \
-    nginx-version="1.22.0" \
-    php-version="8.0.22" \
+    nginx-version="1.22.1" \
+    php-version="8.1.7" \
     wordpress-version="latest" \
-    build="06-Aug-2022" \
+    build="22-Mar-2023" \
     org.opencontainers.image.title="alpine-php-wordpress" \
     org.opencontainers.image.description="Wordpress image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
