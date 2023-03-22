@@ -31,11 +31,11 @@ RUN \
     runtime_pkgs=" bash curl less vim ca-certificates git tzdata zip openssl pcre \
     libmcrypt-dev zlib-dev gmp-dev \
     freetype-dev libjpeg-turbo-dev libpng-dev \
-    php8-fpm php8-json php8-zlib php8-xml php8-xmlwriter php8-simplexml php8-pdo php8-phar php8-openssl \
-    php8-pdo_mysql php8-mysqli php8-session \
-    php8-gd php8-iconv php8-gmp php8-zip \
-    php8-curl php8-opcache php8-ctype php8-apcu \
-    php8-intl php8-bcmath php8-dom php8-mbstring php8-xmlreader mysql-client curl" && \
+    php81-fpm php81-json php81-zlib php81-xml php81-xmlwriter php81-simplexml php81-pdo php81-phar php81-openssl \
+    php81-pdo_mysql php81-mysqli php81-session \
+    php81-gd php81-iconv php81-gmp php81-zip \
+    php81-curl php81-opcache php81-ctype php81-apcu \
+    php81-intl php81-bcmath php81-dom php81-mbstring php81-xmlreader mysql-client curl" && \
     apk --update add ${build_pkgs} ${runtime_pkgs} && apk add -u musl && \
     cd /tmp && \
     wget http://nginx.org/download/nginx-1.21.1.tar.gz && \
