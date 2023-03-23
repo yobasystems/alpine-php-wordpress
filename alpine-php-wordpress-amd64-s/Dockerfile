@@ -90,7 +90,7 @@ RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php81/php.ini && \
     sed -i 's/expose_php = On/expose_php = Off/g' /etc/php81/php.ini && \
     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd- && \
-    ln -s /sbin/php-fpm8 /sbin/php-fpm
+    ln -s /sbin/php-fpm81 /sbin/php-fpm
 
 ADD files/nginx.conf /etc/nginx/nginx.conf
 ADD files/php-fpm.conf /etc/php81/
