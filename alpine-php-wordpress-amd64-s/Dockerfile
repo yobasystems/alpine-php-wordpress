@@ -9,7 +9,7 @@ LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     nginx-version="1.25.1" \
     php-version="8.1.21" \
     wordpress-version="latest" \
-    build="12-Jul-2023" \
+    build="17-Jul-2023" \
     org.opencontainers.image.title="alpine-php-wordpress" \
     org.opencontainers.image.description="Wordpress container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
@@ -35,7 +35,7 @@ RUN \
     php81-pdo_mysql php81-mysqli php81-session \
     php81-gd php81-iconv php81-gmp php81-zip \
     php81-curl php81-opcache php81-ctype php81-apcu \
-    php81-intl php81-bcmath php81-dom php81-mbstring php81-xmlreader mysql-client curl" && \
+    php81-intl php81-bcmath php81-dom php81-mbstring php81-xmlreader mysql-client" && \
     apk --update add ${build_pkgs} ${runtime_pkgs} && apk add -u musl && \
     cd /tmp && \
     wget http://nginx.org/download/nginx-1.25.1.tar.gz && \
