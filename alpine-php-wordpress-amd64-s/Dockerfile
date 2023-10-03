@@ -1,20 +1,20 @@
-FROM yobasystems/alpine:3.18.2-amd64
+FROM yobasystems/alpine:3.18.3-amd64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="amd64/x86_64" \
-    alpine-version="3.18.2" \
-    nginx-version="1.25.1" \
-    php-version="8.1.21" \
+    alpine-version="3.18.3" \
+    nginx-version="1.25.2" \
+    php-version="8.1.24" \
     wordpress-version="latest" \
-    build="17-Jul-2023" \
+    build="03-Oct-2023" \
     org.opencontainers.image.title="alpine-php-wordpress" \
     org.opencontainers.image.description="Wordpress container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.18.2-s" \
+    org.opencontainers.image.version="v3.18.3-s" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-php-wordpress/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-php-wordpress" \
     org.opencontainers.image.revision=$VCS_REF \
@@ -38,9 +38,9 @@ RUN \
     php81-intl php81-bcmath php81-dom php81-mbstring php81-xmlreader mysql-client" && \
     apk --update add ${build_pkgs} ${runtime_pkgs} && apk add -u musl && \
     cd /tmp && \
-    wget http://nginx.org/download/nginx-1.25.1.tar.gz && \
-    tar xzf nginx-1.25.1.tar.gz && \
-    cd /tmp/nginx-1.25.1 && \
+    wget http://nginx.org/download/nginx-1.25.2.tar.gz && \
+    tar xzf nginx-1.25.2.tar.gz && \
+    cd /tmp/nginx-1.25.2 && \
     ./configure \
       --prefix=/etc/nginx \
       --sbin-path=/usr/sbin/nginx \
