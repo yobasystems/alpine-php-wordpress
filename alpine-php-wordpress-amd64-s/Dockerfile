@@ -6,7 +6,7 @@ ARG VCS_REF
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="amd64/x86_64" \
     alpine-version="3.19.0" \
-    nginx-version="1.25.2" \
+    nginx-version="1.25.3" \
     php-version="8.1.26" \
     wordpress-version="latest" \
     build="15-Dec-2023" \
@@ -38,9 +38,9 @@ RUN \
     php81-intl php81-bcmath php81-dom php81-mbstring php81-xmlreader mysql-client" && \
     apk --update add ${build_pkgs} ${runtime_pkgs} && apk add -u musl && \
     cd /tmp && \
-    wget http://nginx.org/download/nginx-1.25.2.tar.gz && \
-    tar xzf nginx-1.25.2.tar.gz && \
-    cd /tmp/nginx-1.25.2 && \
+    wget http://nginx.org/download/nginx-1.25.3.tar.gz && \
+    tar xzf nginx-1.25.3.tar.gz && \
+    cd /tmp/nginx-1.25.3 && \
     ./configure \
       --prefix=/etc/nginx \
       --sbin-path=/usr/sbin/nginx \
