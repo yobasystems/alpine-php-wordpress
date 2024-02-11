@@ -1,11 +1,11 @@
-FROM yobasystems/alpine:3.19.0-armhf
+FROM yobasystems/alpine:3.19.1-armhf
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="arm32v7/armhf" \
-    alpine-version="3.19.0" \
+    alpine-version="3.19.1" \
     nginx-version="1.24.0" \
     php-version="8.1.27" \
     wordpress-version="latest" \
@@ -14,10 +14,10 @@ LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.description="Wordpress container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.19.0" \
+    org.opencontainers.image.version="3.19.1" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-php-wordpress/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-php-wordpress" \
-    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.19.0" \
+    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.19.1" \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE
 
