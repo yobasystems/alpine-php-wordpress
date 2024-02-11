@@ -9,7 +9,7 @@ LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     nginx-version="1.25.3" \
     php-version="8.1.27" \
     wordpress-version="latest" \
-    build="09-Feb-2024" \
+    build="11-Feb-2024" \
     org.opencontainers.image.title="alpine-php-wordpress" \
     org.opencontainers.image.description="Wordpress container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
@@ -17,6 +17,7 @@ LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.version="v3.19.0-s" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-php-wordpress/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-php-wordpress" \
+    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.19.0" \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE
 
