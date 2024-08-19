@@ -4,17 +4,17 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-php-wordpress.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-php-wordpress.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.19.1-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.20.2-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
 [![Wordpress Version](https://img.shields.io/badge/Wordpress%20version-vlatest-green.svg?style=for-the-badge&logo=wordpress)](https://www.wordpress.org/en/)
 
 
 
 This Container image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) ready for running [WordPress](https://www.wordpress.org/). (Requires external database)
 
-### Alpine Version 3.19.1 (Released 2023-01-26)
+### Alpine Version 3.20.2 (Released 2024-07-22)
 ##### Wordpress Version latest
-##### PHP Version 8.1.28
-##### Nginx Version 1.24.0
+##### PHP Version 8.3.10
+##### Nginx Version 1.26.2
 
 ----
 
@@ -179,73 +179,73 @@ docker restart <image_name>
 Example:
 
 ```
-docker exec <image_id> apk add php81-soap
+docker exec <image_id> apk add php83-soap
 docker restart <image_name>
 ```
 
 ```
-php81-common
-php81-pdo_sqlite
-php81-pear
-php81-ftp
-php81-imap
-php81-mysqli
-php81-json
-php81-mbstring
-php81-soap
-php81-litespeed
-php81-sockets
-php81-bcmath
-php81-opcache
-php81-dom
-php81-zlib
-php81-gettext
-php81-fpm
-php81-intl
-php81-openssl
-php81-session
-php81-pdo_mysql
-php81-embed
-php81-xmlrpc
-php81-wddx
-php81-dba
-php81-ldap
-php81-xsl
-php81-exif
-php81-pdo_dblib
-php81-bz2
-php81-pdo
-php81-pspell
-php81-sysvmsg
-php81-gmp
-php81-apache2
-php81-pdo_odbc
-php81-shmop
-php81-ctype
-php81-phpdbg
-php81-enchant
-php81-sysvsem
-php81-sqlite3
-php81-odbc
-php81-pcntl
-php81-calendar
-php81-xmlreader
-php81-snmp
-php81-zip
-php81-posix
-php81-iconv
-php81-curl
-php81-doc
-php81-gd
-php81-xml
-php81-dev
-php81-cgi
-php81-sysvshm
-php81-pgsql
-php81-tidy
-php81-pdo_pgsql
-php81-phar
-php81-mysqlnd
+php83-common
+php83-pdo_sqlite
+php83-pear
+php83-ftp
+php83-imap
+php83-mysqli
+php83-json
+php83-mbstring
+php83-soap
+php83-litespeed
+php83-sockets
+php83-bcmath
+php83-opcache
+php83-dom
+php83-zlib
+php83-gettext
+php83-fpm
+php83-intl
+php83-openssl
+php83-session
+php83-pdo_mysql
+php83-embed
+php83-xmlrpc
+php83-wddx
+php83-dba
+php83-ldap
+php83-xsl
+php83-exif
+php83-pdo_dblib
+php83-bz2
+php83-pdo
+php83-pspell
+php83-sysvmsg
+php83-gmp
+php83-apache2
+php83-pdo_odbc
+php83-shmop
+php83-ctype
+php83-phpdbg
+php83-enchant
+php83-sysvsem
+php83-sqlite3
+php83-odbc
+php83-pcntl
+php83-calendar
+php83-xmlreader
+php83-snmp
+php83-zip
+php83-posix
+php83-iconv
+php83-curl
+php83-doc
+php83-gd
+php83-xml
+php83-dev
+php83-cgi
+php83-sysvshm
+php83-pgsql
+php83-tidy
+php83-pdo_pgsql
+php83-phar
+php83-mysqlnd
 ```
 
 ## Docker Compose example:

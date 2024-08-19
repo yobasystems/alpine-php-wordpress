@@ -16,7 +16,7 @@ chown -R nginx:www-data /usr/html
 
 # start php-fpm
 mkdir -p /usr/logs/php-fpm
-php-fpm81
+php-fpm83
 
 # start nginx
 mkdir -p /usr/logs/nginx
