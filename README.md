@@ -4,16 +4,16 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-php-wordpress.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-php-wordpress.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.20.2-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.21.1-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
 [![Wordpress Version](https://img.shields.io/badge/Wordpress%20version-vlatest-green.svg?style=for-the-badge&logo=wordpress)](https://www.wordpress.org/en/)
 
 
 
 This Container image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) ready for running [WordPress](https://www.wordpress.org/). (Requires external database)
 
-### Alpine Version 3.20.2 (Released 2024-07-22)
+### Alpine Version 3.21.1 (Released 2025-01-06)
 ##### Wordpress Version latest
-##### PHP Version 8.3.10
+##### PHP Version 8.4.3
 ##### Nginx Version 1.26.2
 
 ----
@@ -179,73 +179,73 @@ docker restart <image_name>
 Example:
 
 ```
-docker exec <image_id> apk add php83-soap
+docker exec <image_id> apk add php84-soap
 docker restart <image_name>
 ```
 
 ```
-php83-common
-php83-pdo_sqlite
-php83-pear
-php83-ftp
-php83-imap
-php83-mysqli
-php83-json
-php83-mbstring
-php83-soap
-php83-litespeed
-php83-sockets
-php83-bcmath
-php83-opcache
-php83-dom
-php83-zlib
-php83-gettext
-php83-fpm
-php83-intl
-php83-openssl
-php83-session
-php83-pdo_mysql
-php83-embed
-php83-xmlrpc
-php83-wddx
-php83-dba
-php83-ldap
-php83-xsl
-php83-exif
-php83-pdo_dblib
-php83-bz2
-php83-pdo
-php83-pspell
-php83-sysvmsg
-php83-gmp
-php83-apache2
-php83-pdo_odbc
-php83-shmop
-php83-ctype
-php83-phpdbg
-php83-enchant
-php83-sysvsem
-php83-sqlite3
-php83-odbc
-php83-pcntl
-php83-calendar
-php83-xmlreader
-php83-snmp
-php83-zip
-php83-posix
-php83-iconv
-php83-curl
-php83-doc
-php83-gd
-php83-xml
-php83-dev
-php83-cgi
-php83-sysvshm
-php83-pgsql
-php83-tidy
-php83-pdo_pgsql
-php83-phar
-php83-mysqlnd
+php84-common
+php84-pdo_sqlite
+php84-pear
+php84-ftp
+php84-imap
+php84-mysqli
+php84-json
+php84-mbstring
+php84-soap
+php84-litespeed
+php84-sockets
+php84-bcmath
+php84-opcache
+php84-dom
+php84-zlib
+php84-gettext
+php84-fpm
+php84-intl
+php84-openssl
+php84-session
+php84-pdo_mysql
+php84-embed
+php84-xmlrpc
+php84-wddx
+php84-dba
+php84-ldap
+php84-xsl
+php84-exif
+php84-pdo_dblib
+php84-bz2
+php84-pdo
+php84-pspell
+php84-sysvmsg
+php84-gmp
+php84-apache2
+php84-pdo_odbc
+php84-shmop
+php84-ctype
+php84-phpdbg
+php84-enchant
+php84-sysvsem
+php84-sqlite3
+php84-odbc
+php84-pcntl
+php84-calendar
+php84-xmlreader
+php84-snmp
+php84-zip
+php84-posix
+php84-iconv
+php84-curl
+php84-doc
+php84-gd
+php84-xml
+php84-dev
+php84-cgi
+php84-sysvshm
+php84-pgsql
+php84-tidy
+php84-pdo_pgsql
+php84-phar
+php84-mysqlnd
 ```
 
 ## Docker Compose example:
@@ -280,29 +280,24 @@ mysql:
 ## 📚 Source Repositories
 
 * [Github - yobasystems/alpine-php-wordpress](https://github.com/yobasystems/alpine-php-wordpress)
-
 * [Gitlab - yobasystems/alpine-php-wordpress](https://gitlab.com/yobasystems/alpine-php-wordpress)
-
-* [Bitbucket - yobasystems/alpine-php-wordpress](https://bitbucket.org/yobasystems/alpine-php-wordpress)
+* [Bitbucket - yobasystems/alpine-php-wordpress](https://bitbucket.org/yobasystems/alpine-php-wordpress/)
 
 
 ## 🐳 Container Registries
 
 * [Dockerhub - yobasystems/alpine-php-wordpress](https://hub.docker.com/r/yobasystems/alpine-php-wordpress/)
-
 * [Quay.io - yobasystems/alpine-php-wordpress](https://quay.io/repository/yobasystems/alpine-php-wordpress)
+* [GHCR - yobasystems/alpine-php-wordpress](https://ghcr.io/yobasystems/alpine-php-wordpress)
 
 
 ## 🔗 Links
 
-* [Yoba Systems](https://www.yobasystems.co.uk/)
-
+* [Yoba Systems](https://yoba.systems/)
 * [Github - Yoba Systems](https://github.com/yobasystems/)
-
 * [Dockerhub - Yoba Systems](https://hub.docker.com/u/yobasystems/)
-
 * [Quay.io - Yoba Systems](https://quay.io/organization/yobasystems)
-
+* [GHCR - Yoba Systems](https://ghcr.io/yobasystems)
 * [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
 
 ## 💰 Donation
