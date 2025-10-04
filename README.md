@@ -13,7 +13,7 @@ This Container image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com
 
 ### Alpine Version 3.22.1 (Released 2025-07-15)
 ##### Wordpress Version latest
-##### PHP Version 8.4.10
+##### PHP Version 8.4.13
 ##### Nginx Version 1.28.0
 
 ----
@@ -63,15 +63,12 @@ WordPress is an online, open source website creation tool written in PHP. But in
 ## 📏 Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-php-wordpress/amd64.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-php-wordpress/amd64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-php-wordpress/aarch64.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-php-wordpress/aarch64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-php-wordpress/armhf.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-php-wordpress/armhf.svg?style=for-the-badge)
 
 
@@ -281,7 +278,6 @@ mysql:
 
 * [Github - yobasystems/alpine-php-wordpress](https://github.com/yobasystems/alpine-php-wordpress)
 * [Gitlab - yobasystems/alpine-php-wordpress](https://gitlab.com/yobasystems/alpine-php-wordpress)
-* [Bitbucket - yobasystems/alpine-php-wordpress](https://bitbucket.org/yobasystems/alpine-php-wordpress/)
 
 
 ## 🐳 Container Registries
