@@ -246,7 +246,7 @@ php84-mysqlnd
 
 ## Docker Compose example:
 
-```yalm
+```yaml
 wordpress:
   image: yobasystems/alpine-php-wordpress
   environment:
