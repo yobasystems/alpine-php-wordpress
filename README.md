@@ -89,7 +89,7 @@ E.G
 
 mkdir -p /data/yobasystems/html
 
-docker run -e VIRTUAL_HOST=yobasystems.co.uk,www.yobasystems.co.uk -v /data/yobasystems/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
+docker run -e VIRTUAL_HOST=www.example.com,example.com -v /data/example-com/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress:latest
 ```
 
 The following user and group id are used, the files should be set to this:
