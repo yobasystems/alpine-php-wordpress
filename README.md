@@ -31,7 +31,6 @@ This Container image [(yobasystems/alpine-php-wordpress)](https://hub.docker.com
 - [Source Repositories](#source-repositories)
 - [Container Registries](#container-registries)
 - [Links](#links)
-- [Donation](#donation)
 
 ## 🏔️ What is Alpine Linux?
 
@@ -80,39 +79,38 @@ WordPress is an online, open source website creation tool written in PHP. But in
 
 Make sure you create the folder on the host before starting the container and obtain the correct permissions.
 
-```
+```bash
 mkdir -p /data/{domain}/html
 
-docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress
-
-E.G
-
-mkdir -p /data/yobasystems/html
+docker run -e VIRTUAL_HOST={domain}.com,www.{domain}.com -v /data/{domain}/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress:latest
+```
+OR
+```bash
+mkdir -p /data/example-com/html
 
 docker run -e VIRTUAL_HOST=www.example.com,example.com -v /data/example-com/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress:latest
 ```
 
 The following user and group id are used, the files should be set to this:
-User ID:
-Group ID:
+User ID:1001
+Group ID: 1001
 
+```bash
+chown -R 1001:1001 /data/{domain}/html
 ```
-chown -R 100:101 /data/{domain}/html
-
-E.G
-
-chown -R 100:101 /data/yobasystems/html
+OR
+```bash
+chown -R 1001:1001 /data/example-com/html
 ```
 
 Populate /data/{domain}/html with your WP files.
 
-The following user and group id are used, the files should be set to this:
+The following user and group id are the default used, the permissions should be set to this:
 
-User ID:
+User ID: 101
+Group ID: 100
 
-Group ID:
-
-```
+```bash
 chown -R 100:101 /data/{domain}/html
 ```
 
@@ -120,7 +118,7 @@ chown -R 100:101 /data/{domain}/html
 
 This image now includes WP-CLI wpcli.org baked in... Its best to `su nginx` before executing anything or else you can potentially compromise your host.
 
-```
+```bash
 docker exec -it <container_name> bash
 su nginx
 cd /usr/html
@@ -157,7 +155,7 @@ modify files/php-fpm.conf
 
 To modify php.ini variable, simply edit php-fpm.ini and add php_flag[variable] = value.
 
-```
+```php
 php_flag[display_errors] = on
 ```
 
@@ -167,14 +165,14 @@ php_flag[display_errors] = on
 
 ##### In order to install a php module do, (leave out the version number i.e. -5.6.11-r0
 
-```
+```bash
 docker exec <image_id> apk add <pkg_name>
 docker restart <image_name>
 ```
 
 Example:
 
-```
+```bash
 docker exec <image_id> apk add php84-soap
 docker restart <image_name>
 ```
@@ -248,23 +246,23 @@ php84-mysqlnd
 
 ```yaml
 wordpress:
-  image: yobasystems/alpine-php-wordpress
+  image: yobasystems/alpine-php-wordpress:latest
   environment:
-    VIRTUAL_HOST: example.co.uk
+    VIRTUAL_HOST: example.com
   expose:
     - "80"
   volumes:
-    - /data/example/www:/usr/html
+    - /data/example-com/www:/usr/html
   restart: always
   links:
-    - mysql:mysql
-mysql:
+    - mariadb:mariadb
+mariadb:
   environment:
-    MYSQL_DATABASE: wordpressdb
-    MYSQL_PASSWORD: wordpresspass
-    MYSQL_ROOT_PASSWORD: ''
-    MYSQL_USER: wordpressuser
-  image: yobasystems/alpine-mariadb
+    MARIADB_DATABASE: wordpressdb
+    MARIADB_PASSWORD: 'changeme!'
+    MARIADB_ROOT_PASSWORD: 'changeme!'
+    MARIADB_USER: wordpressuser
+  image: yobasystems/alpine-mariadb:latest
 ```
 
 ## 🔍 Image contents & Vulnerability analysis
