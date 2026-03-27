@@ -47,7 +47,10 @@ ADD files/nginx.conf /etc/nginx/
 ADD files/php-fpm.conf /etc/php84/
 ADD files/run.sh /
 RUN chmod +x /run.sh && \
-    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp-cli && chown nginx:nginx /usr/bin/wp-cli
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp-cli && chown nginx:nginx /usr/bin/wp-cli && \
+    mkdir -p /usr/html /tmp/nginx /etc/nginx/server_includes && \
+    chown -R nginx:www-data /usr/html && \
+    chown nginx:nginx /tmp/nginx
 
 EXPOSE 80
 VOLUME ["/usr/html"]
