@@ -91,6 +91,16 @@ mkdir -p /data/example-com/html
 docker run -e VIRTUAL_HOST=www.example.com,example.com -v /data/example-com/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress:latest
 ```
 
+### Nginx access logs
+
+Nginx access logs (including blocked/security logs) are enabled by default and written to stdout.
+
+To disable all nginx access logs (for example, if Envoy already captures request logs), set `NGINX_ACCESS_LOG=off`.
+
+```bash
+docker run -e NGINX_ACCESS_LOG=off -e VIRTUAL_HOST=www.example.com,example.com -v /data/example-com/html:/usr/html -p 80:80 yobasystems/alpine-php-wordpress:latest
+```
+
 The following user and group id are used, the files should be set to this:
 User ID:1001
 Group ID: 1001
@@ -249,6 +259,7 @@ wordpress:
   image: yobasystems/alpine-php-wordpress:latest
   environment:
     VIRTUAL_HOST: example.com
+    NGINX_ACCESS_LOG: "off" # optional
   expose:
     - "80"
   volumes:
